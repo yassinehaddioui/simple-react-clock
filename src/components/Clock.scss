@@ -1,0 +1,79 @@
+$line-thickness: 2px;
+$line-length: 30px;
+$margin-lines: 2px;
+$color-red: #FF6444;
+$color-green: #00ADA9;
+$color-yellow: #FFC636;
+$bg-color: #f2f3f4;
+
+.clockContainer {
+  width: 500px;
+  margin: 0 auto;
+  overflow: hidden;
+  background-color: $bg-color;
+  border: 1px solid #333;
+  text-align: left;
+  padding: 15px;
+  .sep {
+    width: 15px;
+    display: inline-block;
+    background: #333;
+  }
+  .seconds,
+  .minutes,
+  .hours {
+    display: inline-block;
+  }
+}
+
+.clockDigit {
+  display: inline-block;
+  margin-right: 15px;
+  width: ($line-length * 2) + $margin-lines;
+  &.red {
+    div.active {
+      background: $color-red;
+    }
+  }
+  &.green {
+    div.active {
+      background: $color-green;
+    }
+  }
+  &.yellow {
+    div.active {
+      background: $color-yellow;
+    }
+  }
+  div.active {
+    transition: background 500ms ease;
+  }
+  .row {
+    display: block;
+    clear: both;
+    overflow: hidden;
+    margin-bottom: $margin-lines;
+    .left {
+      float: left;
+    }
+    .right {
+      float: right;
+    }
+    div {
+      border-radius:5px;
+    }
+  }
+
+  .horizontal {
+    height: $line-thickness;
+    width: calc(50% - 1px);
+    &:first-child {
+      margin-right: $margin-lines;
+    }
+  }
+  .vertical {
+    height: $line-length;
+    width: $line-thickness;
+  }
+}
+

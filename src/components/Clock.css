@@ -1,0 +1,48 @@
+.clockContainer {
+  width: 500px;
+  margin: 0 auto;
+  overflow: hidden;
+  background-color: #f2f3f4;
+  border: 1px solid #333;
+  text-align: left;
+  padding: 15px; }
+  .clockContainer .sep {
+    width: 15px;
+    display: inline-block;
+    background: #333; }
+  .clockContainer .seconds,
+  .clockContainer .minutes,
+  .clockContainer .hours {
+    display: inline-block; }
+
+.clockDigit {
+  display: inline-block;
+  margin-right: 15px;
+  width: 62px; }
+  .clockDigit.red div.active {
+    background: #FF6444; }
+  .clockDigit.green div.active {
+    background: #00ADA9; }
+  .clockDigit.yellow div.active {
+    background: #FFC636; }
+  .clockDigit div.active {
+    transition: background 500ms ease; }
+  .clockDigit .row {
+    display: block;
+    clear: both;
+    overflow: hidden;
+    margin-bottom: 2px; }
+    .clockDigit .row .left {
+      float: left; }
+    .clockDigit .row .right {
+      float: right; }
+    .clockDigit .row div {
+      border-radius: 5px; }
+  .clockDigit .horizontal {
+    height: 2px;
+    width: calc(50% - 1px); }
+    .clockDigit .horizontal:first-child {
+      margin-right: 2px; }
+  .clockDigit .vertical {
+    height: 30px;
+    width: 2px; }
