@@ -61,12 +61,7 @@ class Clock extends React.Component<ClockProps, any> {
         )
     }
 
-    constructor(props: ClockProps) {
-        super(props)
-        this.state = {displayNumber: this.props.displayNumber}
-    }
-
-    getColor(value: number): string {
+    static getColor(value: number): string {
         if (value > 6) {
             return 'red'
         }
@@ -78,15 +73,20 @@ class Clock extends React.Component<ClockProps, any> {
         return 'green'
     }
 
+    constructor(props: ClockProps) {
+        super(props)
+        this.state = {displayNumber: this.props.displayNumber}
+    }
+
     renderSeconds(): JSX.Element {
         return (
             <div className="seconds">
                 {Clock.renderChar(
                     this.props.displayNumber[4],
-                    this.getColor(parseInt(this.props.displayNumber[4], 10)))}
+                    Clock.getColor(parseInt(this.props.displayNumber[4], 10)))}
                 {Clock.renderChar(
                     this.props.displayNumber[5],
-                    this.getColor(parseInt(this.props.displayNumber[5], 10)))}
+                    Clock.getColor(parseInt(this.props.displayNumber[5], 10)))}
             </div>
         )
     }
@@ -96,10 +96,10 @@ class Clock extends React.Component<ClockProps, any> {
             <div className="minutes">
                 {Clock.renderChar(
                     this.props.displayNumber[2],
-                    this.getColor(parseInt(this.props.displayNumber[2], 10)))}
+                    Clock.getColor(parseInt(this.props.displayNumber[2], 10)))}
                 {Clock.renderChar(
                     this.props.displayNumber[3],
-                    this.getColor(parseInt(this.props.displayNumber[3], 10)))}
+                    Clock.getColor(parseInt(this.props.displayNumber[3], 10)))}
             </div>
         )
     }
@@ -109,10 +109,10 @@ class Clock extends React.Component<ClockProps, any> {
             <div className="minutes">
                 {Clock.renderChar(
                     this.props.displayNumber[0],
-                    this.getColor(parseInt(this.props.displayNumber[0], 10)))}
+                    Clock.getColor(parseInt(this.props.displayNumber[0], 10)))}
                 {Clock.renderChar(
                     this.props.displayNumber[1],
-                    this.getColor(parseInt(this.props.displayNumber[1], 10)))}
+                    Clock.getColor(parseInt(this.props.displayNumber[1], 10)))}
             </div>
         )
     }
