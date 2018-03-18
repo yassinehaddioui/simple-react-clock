@@ -2,6 +2,7 @@ import * as React from 'react'
 import './App.css'
 import Clock from './components/Clock'
 import Timer = NodeJS.Timer
+import MapGenerator from './components/MapGenerator'
 
 // const logo = require('./logo.svg')
 
@@ -42,6 +43,7 @@ class App extends React.Component<any, any> {
                     <h1 className="App-title">React Clock</h1>
                 </header>
                 <Clock displayNumber={this.state.displayNumber}/>
+                <MapGenerator/>
             </div>
         )
     }

@@ -77,3 +77,22 @@ $bg-color: #f2f3f4;
   }
 }
 
+.map-generator {
+  margin-top: 25px;
+  .row {
+    div {
+      border: 1px solid #ccc;
+    }
+    div.active {
+      transition: background 100ms ease;
+    }
+  }
+
+  .horizontal {
+    width: calc(50% - 3px);
+    &:first-child {
+      margin-right: 0px;
+    }
+  }
+}
+

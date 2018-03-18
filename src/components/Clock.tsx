@@ -5,7 +5,7 @@ interface ClockProps {
     displayNumber: string;
 }
 
-class Clock extends React.Component<ClockProps, any> {
+class Clock extends React.Component<ClockProps> {
 
     static defaultProps: Partial<ClockProps> = {
         displayNumber: '666666'
@@ -23,6 +23,13 @@ class Clock extends React.Component<ClockProps, any> {
             '7': [[1, 1], [0, 1], [0, 1], [0, 0], [0, 1], [0, 1], [0, 0]],
             '8': [[1, 1], [1, 1], [1, 1], [1, 1], [1, 1], [1, 1], [1, 1]],
             '9': [[1, 1], [1, 1], [1, 1], [1, 1], [0, 1], [0, 1], [1, 1]],
+            'A': [[1, 1], [1, 1], [1, 1], [1, 1], [1, 1], [1, 1], [0, 0]],
+            'B': [[1, 1], [1, 1], [1, 1], [1, 1], [1, 1], [1, 1], [1, 1]],
+            'C': [[1, 1], [1, 0], [1, 0], [0, 0], [1, 0], [1, 0], [1, 1]],
+            'D': [[1, 1], [1, 1], [1, 1], [0, 0], [1, 1], [1, 1], [1, 1]],
+            'E': [[1, 1], [1, 0], [1, 0], [1, 1], [1, 0], [1, 0], [1, 1]],
+            'F': [[1, 1], [1, 0], [1, 0], [1, 1], [1, 0], [1, 0], [0, 0]],
+
         }
         if (!mapping[toRender]) {
             throw new Error('Symbol not available')
@@ -125,6 +132,9 @@ class Clock extends React.Component<ClockProps, any> {
                 {this.renderMinutes()}
                 <div className="sep"/>
                 {this.renderSeconds()}
+                <div className="sep"/>
+                {/*{Clock.renderChar('A')}*/}
+                {/*{Clock.renderChar('B')}*/}
             </div>
         )
     }

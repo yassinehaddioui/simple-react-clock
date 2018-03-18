@@ -46,3 +46,14 @@
   .clockDigit .vertical {
     height: 30px;
     width: 2px; }
+
+.map-generator {
+  margin-top: 25px; }
+  .map-generator .row div {
+    border: 1px solid #ccc; }
+  .map-generator .row div.active {
+    transition: background 100ms ease; }
+  .map-generator .horizontal {
+    width: calc(50% - 3px); }
+    .map-generator .horizontal:first-child {
+      margin-right: 0px; }
