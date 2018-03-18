@@ -1,18 +1,28 @@
 import * as React from 'react'
 import './App.css'
 import Clock from './components/Clock'
-import Timer = NodeJS.Timer
 import MapGenerator from './components/MapGenerator'
+// import { withStyles } from 'material-ui/styles';
+import Button from 'material-ui/Button'
+import CssBaseline from 'material-ui/CssBaseline'
+import Timer = NodeJS.Timer
 
 // const logo = require('./logo.svg')
+interface AppProps {
+}
 
-class App extends React.Component<any, any> {
+interface AppState {
+    displayNumber: string,
+    showGenerator: boolean
+}
+
+class App extends React.Component<AppProps, AppState> {
     interval: Timer
     refreshRate: number
 
-    constructor(props: any) {
-        super(props);
-        this.state = {displayNumber: '014589'}
+    constructor(props: AppProps) {
+        super(props)
+        this.state = {displayNumber: '014589', showGenerator: false}
         this.tick = this.tick.bind(this)
         this.refreshRate = 250
     }
@@ -39,11 +49,23 @@ class App extends React.Component<any, any> {
     render() {
         return (
             <div className="App">
+                <CssBaseline/>
                 <header className="App-header">
                     <h1 className="App-title">React Clock</h1>
                 </header>
-                <Clock displayNumber={this.state.displayNumber}/>
-                <MapGenerator/>
+                <div style={{'marginBottom': '15px'}}>
+                    <Clock displayNumber={this.state.displayNumber}/>
+                </div>
+                <Button
+                    color="primary"
+                    variant="raised"
+                    onClick={() => {
+                        this.setState({showGenerator: !this.state.showGenerator})
+                    }}
+                >
+                    Generator
+                </Button>
+                {this.state.showGenerator && <div style={{padding : '15px'}}><MapGenerator/></div>}
             </div>
         )
     }

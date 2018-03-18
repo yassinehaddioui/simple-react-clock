@@ -33,6 +33,7 @@ class MapGenerator extends React.Component<MapGeneratorProps, MapGeneratorState>
                                     <div key={primaryIndex} className="row">
                                         {primaryItem.map((item, index) => (
                                             <div
+                                                key={index}
                                                 className={((primaryIndex === 0
                                                     || primaryIndex === 3 || primaryIndex === 6) ?
                                                     'horizontal ' : 'vertical ')

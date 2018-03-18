@@ -7,12 +7,12 @@ $color-yellow: #FFC636;
 $bg-color: #f2f3f4;
 
 .clockContainer {
-  width: 500px;
+  width: 600px;
   margin: 0 auto;
   overflow: hidden;
   background-color: $bg-color;
   border: 1px solid #333;
-  text-align: left;
+  text-align: center;
   padding: 15px;
   .sep {
     width: 15px;
@@ -82,6 +82,7 @@ $bg-color: #f2f3f4;
   .row {
     div {
       border: 1px solid #ccc;
+      box-sizing: content-box;
     }
     div.active {
       transition: background 100ms ease;
